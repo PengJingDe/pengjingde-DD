@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="GBK">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preload" href="other/dialog.html" as="document">
-    <title>ä¸ªäººç®€ä»‹_æµ‹è¯•</title>
+    <title>pengjingde</title>
     <style>
-        #DD{
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px auto;
-            padding: 20px;
-            width:60%;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #f9f9f9;
+        .center-image {
+          display: block;
+          margin: 0 auto; /* ×óÓÒÍâ±ß¾àÉèÎª auto */
+          max-width: 100%; /* Í¼Æ¬×î´ó¿í¶ÈÎªdiv¿í¶È */
+          max-height: 100%; /* Í¼Æ¬×î´ó¸ß¶ÈÎªdiv¸ß¶È */
+          width: 100%; /* ×ÔÊÊÓ¦¿í¶È */
+          height: 100%; /* ×ÔÊÊÓ¦¸ß¶È */
         }
-        h1 {
-            color: #333;
+        #dialog{
+        	 margin: 10% auto; /* ×óÓÒÍâ±ß¾àÉèÎª auto */
+           width: 50%; 
+           text-align: center;
         }
-        p {
-            color: #666;
-        }
+        body {
+        background: linear-gradient(to bottom right, #a3c6e4, #b1e4f4);
+  /* ĞŞ¸ÄÑÕÉ«ÖµºÍ·½ÏòÒÔ»ñµÃ²»Í¬µÄ½¥±äĞ§¹û */
+  /* ÕâÀïÊ¹ÓÃµÄÑÕÉ«ÊÇÇ³À¶É«µ½Ç³ÇàÉ«µÄ½¥±ä */
+       font-family: Arial, sans-serif;
+       color: #333; /* ÉèÖÃÒ³ÃæÎÄ×ÖÑÕÉ« */
+       cursor:pointer;
+}
     </style>
+<script>
+    document.body.onclick=function() {
+        // ĞŞ¸Ä´Ë´¦µÄ URL ÎªÄãÏ£ÍûÌø×ªµÄÄ¿±êÒ³Ãæ
+        location.href = "index.html";
+    };
+</script>
 </head>
 <body>
-    <div id="DD">
-    <h1>ä¸ªäººä¿¡æ¯</h1>
-    <img src="image/DD.jpg" alt="æˆ‘çš„å¤´åƒ" style="width: 150px; height: 150px; border-radius: 50%; float: left; margin-right: 20px;">
-    <p><strong>å§“å:</strong> å½­æ™¯å¾·</p>
-    <p><strong>å¹´é¾„:</strong> 23å²</p>
-    <p><strong>å±…ä½åœ°:</strong> ä¸­å›½</p>
-    <p><strong>å…´è¶£çˆ±å¥½:</strong> ç¼–ç¨‹ã€æ¸¸æˆã€å¾ˆå¤š</p>
-    <p><strong>ä¸ªäººç®€ä»‹:</strong> æˆ‘æ˜¯ä¸€ä¸ªçƒ­çˆ±å­¦ä¹ å’Œæ¢ç´¢çš„å¹´è½»äººï¼Œå–œæ¬¢æŒ‘æˆ˜æ–°çš„äº‹ç‰©ï¼Œç‰¹åˆ«æ˜¯åœ¨è®¡ç®—æœºé¢†åŸŸã€‚å¸Œæœ›èƒ½å¤Ÿä¸æ–­æå‡è‡ªå·±çš„æŠ€èƒ½ï¼Œæˆä¸ºä¸€ä¸ªä¼˜ç§€çš„è½¯ä»¶å·¥ç¨‹å¸ˆã€‚</p>
+    <div id="dialog">
+    	<div style="width:200px;height:200px;margin: 0px auto;border-radius:100px; overflow:hidden;">
+    		<img src="image/DD.jpg" alt="Ë§Æø~" title="Ë§Æø~~~~~~~" class="center-image"/>
+    	</div>
+    	<br/><br/>
+    	<h1>DD</h1>
+    	<br/>
+    	<hr>
+    	<p>Å¬Á¦µ½ÎŞÄÜÎªÁ¦£¬Æ´²«µ½¸Ğ¶¯×Ô¼º</p>
+    	<hr>
+    	<h2>Welcome to My Home!</h2>
     </div>
+    
+    
+    
 </body>
 </html>
