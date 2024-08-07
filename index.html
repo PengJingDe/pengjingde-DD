@@ -19,27 +19,104 @@
            width: 50%; 
            text-align: center;
         }
-        body {
-        background: linear-gradient(to bottom right, #a3c6e4, #b1e4f4);
-        font-family: Arial, sans-serif;
-        color: #333; /* 设置页面文字颜色 */
+        body {  /*  #ee7752, #e73c7e, #23a6d5, #23d5ab */
+	        background: linear-gradient(-45deg, #23a6d5, #2d8cbf, #f3d250, #3cc26f );
+	        background-size: 400% 400%;
+	        animation: gradient 15s ease infinite;
+	        height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #333; /* 设置页面文字颜色 */
         }
+
+        @keyframes gradient {
+	        0% {
+		        background-position: 0% 50%;
+	        }
+	        50% {
+		        background-position: 100% 50%;
+	        }
+	        100% {
+		        background-position: 0% 50%;
+	        }
+        }
+
+
+
+        ul {
+        list-style-type: none;
+        padding: 0;
+        text-align: center; /* 居中对齐 */
+        }
+        ul li {
+            display: inline-block;
+            margin-right: 20px; /* 设置间隔 */
+        }
+        li img{
+            width: 30px;
+            height: 30px;
+            background-color: transparent; /* 设置背景透明 */
+            object-fit: contain; /* 图片自适应大小 */
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        li img:hover {
+            transform: scale(1.3); /* 鼠标悬停时放大1.1倍 */
+        }
+        #touxiang{
+            width:200px;
+            height:200px;
+            margin: 0px auto;
+            border-radius:100px;
+            overflow:hidden;
+            box-shadow: 0 5px 12px 0px rgba(0,0,0,0.6);
+	        transform: translatey(0px);
+	        animation: float 6s ease-in-out infinite;
+	        img { width: 100%; height: auto;}
+        }
+
+        @keyframes float {
+	        0% {
+		        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		        transform: translatey(0px);
+	        }
+	        50% {
+		        box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		        transform: translatey(-20px);
+	        }
+	        100% {
+		        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		        transform: translatey(0px);
+	        }
+            
+
+}
+
     </style>
 
     <script src="js/translate.js"></script>
 </head>
 <body>
     <div id="dialog">
-    	<div style="width:200px;height:200px;margin: 0px auto;border-radius:100px; overflow:hidden;">
+    	<div id="touxiang">
     		<img src="image/DD.jpg" alt="帅气~" title="帅气~~~~~~~" class="center-image"/>
     	</div>
     	<br/><br/>
     	<h1>DD</h1>
     	<br/>
     	<hr>
-    	<p>努力到无能为力，拼搏到感动自己</p>
-    	<hr>
+    	<p>努力到无能为力，拼搏到感动自己~</p>
+    	<hr><br/>
     	<h2>Welcome to My Home!</h2>
+        <div style="margin-top:80px;">
+            <ul>
+                <li><a href=""><img src="image/vx.png"title="微信"/></a></li>
+                <li><a href=""><img src="image/qq.png"title="QQ"/></a></li>
+                <li><a href=""><img src="image/email.png"title="邮箱"/></a></li>
+                <li><a href=""><img src="image/weibo.png"title="微博"/></a></li>
+                <li><a href=""><img src="image/bili.png"title="bilibili"/></a></li>
+                <li><a href=""><img src="image/book.png"title="飞书"/></a></li>
+            </ul>
+        </div>
     </div>
     
 </body>
