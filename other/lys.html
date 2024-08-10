@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李永思的个人作品集</title>
+
+    <style>
+        /* body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        } */
+        body{
+            background-image: url('../image/lys_bg.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        .container {
+            perspective: 1000px;
+        }
+
+        .box {
+            width: 60vw;
+            height: 75vh;
+            /* background-color: #3498db; */
+            background-color: transparent;
+            border-radius: 10px;
+            /* transform: rotateY(0) rotateZ(0); */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            /* transition: transform 2s; */
+            position: relative;
+            cursor: pointer;
+            margin: 0px auto;
+
+        }
+        .box img{
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            transform: rotateY(0) rotateZ(0) scale(0.5);
+            transition: transform 2s;
+            transform-style: preserve-3d;
+        }
+        .box img:hover{
+            
+            transform: rotateY(360deg) rotateZ(360deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            
+        }
+
+        #yes{
+            width: 60vw;
+            height: 75vh;
+            background-color: transparent;
+            border-radius: 10px;
+            /* transform: rotateY(0) rotateZ(0); */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            /* transition: transform 2s; */
+            position: relative;
+            cursor: pointer;
+            margin: 0px auto;
+        }
+
+        .am{
+            width: 5vw;
+            height: 11vh;
+            position: absolute;
+            background-color: #a7c284;
+            transform-style: preserve-3d;
+            transform: rotateX(0) rotateY(0);
+            animation: rotate 5s infinite linear;
+        }
+
+        /* .am {
+            width: 7vw;
+            height: 12vh;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(0) rotateY(0);
+            animation: rotate 5s infinite linear;
+        } */
+
+        .am::before,
+        .am::after {
+            content: '';
+            position: absolute;
+            width: 5vw;
+            height: 11vh;
+            background: rgba(160, 187, 124, 0.7);
+            transform: rotateX(45deg) rotateY(45deg);
+        }
+
+        .am::before {
+            background: rgba(0, 255, 0, 0.7);
+            transform: rotateX(45deg) rotateY(135deg);
+        }
+
+        .am::after {
+            transform: rotateX(-45deg) rotateY(45deg);
+            background: rgba(240, 179, 240, 0.7);
+        }
+
+        @keyframes rotate {
+            from { transform: rotateX(0) rotateY(0); }
+            to { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+
+
+
+        .front{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 12vh;
+            width: 100vw;
+            background-color: transparent;
+        }
+        .frontone{
+            position: relative;
+            overflow: hidden;
+            perspective: 1000px;
+            width: 47vw;
+            height: 12vh;
+            background-color: transparent;
+        }
+        .frontwo{
+            width: 6vw;
+            height: 12vh;
+            display: flex; /* 使用 flexbox 布局 */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            background-color: transparent;
+        }
+        .frontthree{
+            position: relative;
+            overflow: hidden;
+            width: 47vw;
+            height: 12vh;
+            background-color: transparent;
+        }
+        h1{
+            font-family: 'YourChosenFont', sans-serif;
+            font-size: 4rem;
+            font-weight: bold;
+            line-height: 12vh;
+            text-transform: uppercase;
+            color: #978080;
+            text-shadow: 
+                1px 1px 0 #fff,
+                2px 2px 0 #ccc,
+                3px 3px 0 #aaa,
+                4px 4px 0 #888,
+                5px 5px 0 #666;
+        }
+        .txt1{
+            display: flex;
+            justify-content: flex-end;
+            width: 40vw;
+            font-family: 'YourChosenFont', sans-serif;
+            font-size: 2rem;
+            line-height: 12vh;
+            color: transparent;
+            animation: jump 2s ease-in-out infinite, moveToPosition 2s ease-in-out forwards;
+            text-align: center;
+            text-shadow: 
+            1px 1px 0 #c0a1b4, /* 上方的阴影 */
+            -1px -1px 0 #c7e492, /* 下方的阴影 */
+            1px -1px 0 #d4c3c3, /* 右方的阴影 */
+            -1px 1px 0 #badfb1; /* 左方的阴影 */
+        }
+        .txt2{
+            display: flex;
+            justify-content: flex-end;
+            width: 40vw;
+            font-family: 'YourChosenFont', sans-serif;
+            font-size: 2rem;
+            line-height: 12vh;
+            color: transparent;
+            animation: jump2 2s ease-in-out infinite, moveToPosition 2s ease-in-out forwards;
+            text-align: center;
+            text-shadow: 
+            1px 1px 0 #c0a1b4, /* 上方的阴影 */
+            -1px -1px 0 #c7e492, /* 下方的阴影 */
+            1px -1px 0 #d4c3c3, /* 右方的阴影 */
+            -1px 1px 0 #badfb1; /* 左方的阴影 */
+        }
+        h2{
+            margin-left: 5vw;
+        }
+        @keyframes jump {
+            0%, 100% {
+                transform: translateY(-1vh);
+            }
+            50% {
+                transform: translateY(-7vh);
+            }
+        }
+        @keyframes jump2 {
+            0%, 100% {
+                transform: translateX(1vh)  translateY(-4vh);
+            }
+            50% {
+                transform: translateX(-43vh) translateY(-4vh);;
+            }
+        }
+
+        @keyframes moveToPosition {
+            0% {
+                left: 0;
+                top: 0;
+            }
+            100% {
+                left: 100px; /* 目标位置的水平坐标 */
+                top: 100px;  /* 目标位置的垂直坐标 */
+            }
+        }
+
+        .mid{
+            display: flex;
+            justify-content: center;
+            align-items:   flex-start;
+            height: 75vh;
+            width: 100vw;
+            
+        }
+        .tail{
+            
+            background-color:transparent;
+            text-align: center;
+            height: 10vh;
+            width: 100vw;
+            line-height: 10vh;
+            z-index: 9999; /* 确保 z-index 值足够大 */
+            position: relative; /* 确保 position 属性设置正确 */
+        }
+        .tail img{    
+            max-width: 100%;
+            height: 10vh;
+            transition: transform 1.5s;
+            animation: flash 2s infinite;
+        }
+        .tail img:hover{    
+            top:-20px;
+            transform:scale(1.3);
+        }
+
+        #d{
+            width: 60vw;
+            height: 75vh;
+            background-color: transparent;
+            border-radius: 10px;
+            /* transform: rotateY(0) rotateZ(0); */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            /* transition: transform 2s; */
+            position: absolute;
+            cursor: pointer;
+            margin: 0px auto;
+            perspective: 1000px; /* 创建一个透视效果 */
+            transform-origin: left ; /* 以左边框为基准旋转 */
+            /* transition: transform 0.5s; 添加平滑过渡效果  */
+            z-index:1;
+        }
+        #d img{
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            transform: rotateY(0) rotateZ(0) scale(0.5);
+            transition: transform 2s;
+            transform-style: preserve-3d;
+        }
+        #d img:hover{
+            
+            transform: rotateY(360deg) rotateZ(360deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            
+        }
+
+
+        .d2{
+            width: 60vw;
+            height: 75vh;
+            background-color:transparent;
+            border-radius: 10px;
+            /* transform: rotateY(0) rotateZ(0); */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            /* transition: transform 2s; */
+            position: absolute;
+            cursor: pointer;
+            margin: 0px auto;
+            perspective: 1000px; /* 创建一个透视效果 */
+            transform-origin: left ; /* 以左边框为基准旋转 */
+            /* transition: transform 0.5s; 添加平滑过渡效果  */
+            z-index:1;
+            animation-fill-mode: forwards;
+            animation: left_s 1.5s forwards;
+        }
+        .d2 img{
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            transform: rotateY(0) rotateZ(0) scale(0.5);
+            transition: transform 2s;
+            transform-style: preserve-3d;
+        }
+        .d2 img:hover{
+            
+            transform: rotateY(360deg) rotateZ(360deg);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            
+        }
+
+        /* #d2:hover {
+            transform: rotateY(180deg); /* 旋转90度 
+        } */
+        
+        .animate_left {
+            animation-fill-mode: forwards;
+            
+            animation: left_s 1.5s forwards;
+        }
+        .animate_right {
+            animation: right_s 1.5s forwards;
+        }
+
+        @keyframes flash {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes left_s {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(180deg);
+            }
+        }
+        @keyframes right_s {
+            from {
+                transform: rotateY(180deg);
+            }
+            to {
+                transform: rotate(0deg);
+            }
+
+        }
+
+    </style>
+
+
+    <script>
+        var num=0
+        window.onload=function(){
+
+            // document.getElementById('d2').addEventListener('click', function() {
+            //     this.classList.add('animate_left');
+            // });
+            let myindex = 1;
+            
+            document.addEventListener('click', function(event) {
+                // 获取点击的元素
+                var target = event.target;
+                myindex=myindex+1;
+                //console.log(target);
+                // 确保目标是一个 `div` 元素
+                var parentElement = target.parentElement;
+                if(parentElement.id==="yes"){
+                if (target.tagName === 'DIV') {
+                    var s=window.getComputedStyle(target).animation;
+                    if(s.includes('left_s')){
+                        //target.classList.remove('ddd');
+                        //target.classList.add('animate_left');
+                        target.style.animationFillMode = 'forwards';
+                        target.style.animation = 'right_s 1.5s forwards';
+                        requestAnimationFrame(() => {
+                         target.style.zIndex = myindex;
+                    });
+                    }else{
+                        target.style.animationFillMode = 'forwards';
+                        target.style.animation = 'left_s 1.5s forwards';
+                        requestAnimationFrame(() => {
+                         target.style.zIndex = myindex;
+                        });
+                        
+                    }
+
+                }
+                }
+            });
+
+            
+        }
+      </script>
+</head>
+<body>
+    <!-- <div class="container">
+        <div class="box"></div>
+    </div> -->
+    <div class="front">
+        <div class="frontone">
+            <div class="am">
+
+            </div>
+            <div class="txt1">
+                <h2>李</h2>
+                <h2>永</h2>
+                <h2>思</h2>
+            </div>
+        </div>
+        <div class="frontwo">
+            <h1>的</h1>
+        </div>
+        <div class="frontthree">
+            <div class="txt2">
+                <h2><i>个人渲染作品</i></h2>
+            </div>
+        </div>
+    </div>
+    <div class="mid">
+        <div class="box" style="z-index:1;">
+            <img  src="../image/1.jpg" alt="">
+        </div>
+        <div id="yes"style="z-index:1;">
+            <div id="d">
+                <img  src="../image/2.jpg" alt="">
+            </div>
+            <div class="d2">
+                <img  src="../image/3.jpg" alt="">
+            </div>
+            <div class="d2" >
+                <img  src="../image/4.jpg" alt="">
+            </div>
+            <div  class="d2" >
+                <img  src="../image/5.jpg" alt="">
+            </div>
+
+            
+        </div>
+        <!-- <div class="box" style="z-index:1;">
+            <img  src="../image/1.jpg" alt="">
+        </div> -->
+        
+        
+    </div>
+
+    <div class="tail">
+        <img src="../image/next.png" alt="">
+    </div>
+</body>
+</html>
+
+
